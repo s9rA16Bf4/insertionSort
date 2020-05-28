@@ -11,18 +11,14 @@ private:
 public:
   std::vector<T> getVector(); // Returns internalVector
   void sort(); // Sorts our vector
-  void loadVector(std::vector<T> &orginVector);
+  void loadVector(std::vector<T> &originVector);
 };
 
 template<typename T>
 std::vector<T> insertionSort<T>::getVector(){ return this->internalVector; }
 
 template<typename T>
-void insertionSort<T>::loadVector(std::vector<T> &orginVector){
-  for(T object:orginVector){
-    this->internalVector.push_back(object);
-  }
-}
+void insertionSort<T>::loadVector(std::vector<T> &originVector){ this->internalVector = originVector; }
 
 template<typename T>
 void insertionSort<T>::sort(){
